@@ -1,0 +1,135 @@
+*{
+  margin:0;
+  box-sizing:border-box;
+  font-family:Inter;
+}
+
+body{
+  background:transparent;
+}
+
+/* Wrapper */
+.upload-modal{
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Main Box */
+.upload-box{
+  background:white;
+  width:480px;
+  padding:25px;
+  border-radius:18px;
+  position:relative;
+  color:#000;
+  transition:.3s;
+}
+
+/* Close Icon */
+.close-frame{
+  position:absolute;
+  top:14px;
+  right:18px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Inputs */
+.upload-box input,
+.upload-box select,
+.upload-box textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin-bottom:12px;
+  outline:none;
+  background:#f8fafc;
+}
+
+/* Drop */
+#drop{
+  border:2px dashed #0ea5e9;
+  border-radius:12px;
+  padding:35px;
+  text-align:center;
+  color:#0ea5e9;
+  cursor:pointer;
+  margin-bottom:12px;
+}
+
+/* Progress */
+.progress{
+  height:8px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:15px;
+}
+
+#bar{
+  height:100%;
+  width:0%;
+  background:#0ea5e9;
+}
+
+/* Buttons */
+.upload-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+}
+
+.upload-actions button{
+  padding:8px 16px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  background:white;
+  cursor:pointer;
+}
+
+.upload-actions .primary{
+  background:#0ea5e9;
+  color:white;
+  border:none;
+}
+
+/* LIGHT */
+
+body.light .upload-box{background:white;color:black;}
+body.light .close-frame{color:black;}
+body.light input,
+body.light select,
+body.light textarea{background:#f1f5f9;color:black;}
+
+/* DARK */
+
+body.dark .upload-box{background:#020617;color:white;}
+body.dark .close-frame{color:white;}
+
+body.dark input,
+body.dark select,
+body.dark textarea{
+  background:#020617;
+  border:1px solid #1e293b;
+  color:white;
+}
+
+body.dark #drop{
+  border-color:#38bdf8;
+  color:#38bdf8;
+}
+
+body.dark .progress{background:#1e293b;}
+body.dark #bar{background:#38bdf8;}
+
+body.dark .upload-actions button{
+  background:#020617;
+  border:1px solid #1e293b;
+  color:white;
+}
+
+body.dark .primary{background:#0284c7;}

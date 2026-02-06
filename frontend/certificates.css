@@ -1,0 +1,95 @@
+.cert-grid{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.cert-card{
+background:white;
+width:360px;
+padding:22px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.cert-info h4{
+margin:0;
+font-size:18px;
+}
+
+.cert-info p{
+margin:6px 0;
+color:#666;
+}
+
+.pending{
+color:orange;
+font-weight:600;
+}
+
+.verified{
+color:green;
+font-weight:600;
+}
+
+.cert-actions{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.view-btn{
+background:#e9f2ff;
+border:none;
+padding:8px 16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.del-btn{
+background:#ff4b4b;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.view-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.view-box{
+width:80%;
+height:85%;
+background:white;
+border-radius:16px;
+position:relative;
+}
+
+.view-box iframe{
+width:100%;
+height:100%;
+border:none;
+border-radius:16px;
+}
+
+.close-btn{
+position:absolute;
+top:10px;
+right:16px;
+font-size:28px;
+cursor:pointer;
+}

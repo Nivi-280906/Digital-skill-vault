@@ -1,0 +1,418 @@
+*{
+  margin:0;
+  box-sizing:border-box;
+  font-family:Inter;
+}
+
+/* Body */
+body{
+  background:#f6f9fc;
+}
+
+/* Layout */
+.layout{
+  display:flex;
+  height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+  width:240px;
+  background:linear-gradient(180deg,#0ea5e9,#0284c7);
+  color:white;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.sidebar nav a{
+  display:block;
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+  cursor:pointer;
+  color:white;
+  text-decoration:none;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover{
+  background:rgba(255,255,255,.25);
+}
+
+.bottom{
+  margin-top:auto;
+}
+
+/* Main */
+main{
+  flex:1;
+  padding:25px;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.left input{
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin-top:6px;
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.upload-btn{
+  background:#0ea5e9;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Profile */
+.profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  position:relative;
+}
+
+.avatar-img,
+.avatar-fallback{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.avatar-img{object-fit:cover;}
+
+.avatar-fallback{
+  background:#e5e7eb;
+  color:#0ea5e9;
+}
+
+.profile-text .email{
+  font-size:12px;
+  opacity:.6;
+}
+
+.gear{
+  width:22px;
+  cursor:pointer;
+}
+
+/* Settings dropdown */
+.settings{
+  display:none;
+  position:absolute;
+  right:0;
+  top:45px;
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.profile:hover .settings{display:block;}
+
+.settings div{
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.settings div:hover{background:#e5e7eb;}
+
+/* Stats */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.stat{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.stat h1{
+  font-size:32px;
+  font-weight:700;
+}
+
+/* Learning Status smaller */
+#learningStatus{font-size:24px!important;}
+
+/* Cards */
+.content{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.big{min-height:320px;}
+
+/* Recent Certificates */
+
+.recent-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.cert-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+}
+
+.cert-left{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.cert-icon{
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  background:#e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cert-title{font-weight:600;}
+
+.cert-tags{
+  display:flex;
+  gap:6px;
+  margin-top:4px;
+}
+
+.tag{
+  font-size:11px;
+  padding:3px 8px;
+  border-radius:20px;
+  background:#f1f5f9;
+}
+
+.cert-date{
+  font-size:12px;
+  opacity:.6;
+}
+
+/* Progress */
+.progress{
+  height:10px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin:10px 0;
+}
+
+.progress-fill{
+  background:#0ea5e9;
+  border-radius:10px;
+  color:transparent;
+  font-size:0;
+}
+
+.strength-text{
+  margin-top:6px;
+  font-size:13px;
+  opacity:.7;
+}
+
+/* Modals */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+
+.modal-box{
+  background:#0b1220;
+  padding:25px;
+  border-radius:12px;
+  width:300px;
+  color:white;
+}
+.upload-frame-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,.45);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+
+.upload-frame-box{
+  background:transparent;
+  width:520px;
+  height:700px;
+  max-height:90vh;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+}
+
+.upload-frame-box iframe{
+  width:100%;
+  height:100%;
+  border:none;
+  background:transparent;
+}
+
+
+
+
+/* Learning Status colors */
+
+.status-active{color:#16a34a;}
+.status-inactive{color:#dc2626;}
+
+/* Dark Mode */
+
+body.dark{
+  background:#020617;
+  color:#e5e7eb;
+}
+
+body.dark .sidebar{
+  background:#020617;
+  border-right:1px solid #1e293b;
+}
+
+body.dark .card,
+body.dark .stat{
+  background:#020617;
+  border:1px solid #1e293b;
+  box-shadow:none;
+}
+
+body.dark input{
+  background:#020617;
+  border:1px solid #1e293b;
+  color:white;
+}
+
+body.dark .upload-btn{background:#0284c7;}
+
+body.dark .progress{background:#1e293b;}
+body.dark .progress-fill{background:#38bdf8;}
+
+body.dark .settings{
+  background:#020617;
+  border:1px solid #1e293b;
+  color:white;
+}
+
+body.dark .settings div:hover{background:#1e293b;}
+body.dark .sidebar nav a.active{background:#0284c7;}
+body.dark .gear{filter:invert(1);}
+
+body.dark .cert-row{border:1px solid #1e293b;}
+body.dark .cert-icon{background:#1e293b;}
+body.dark .tag{background:#1e293b;}
+
+body.dark .status-active{color:#22c55e;}
+body.dark .status-inactive{color:#f87171;}
+/* Level badge colors */
+
+.tag.beginner{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.tag.intermediate{
+  background:#fef9c3;
+  color:#854d0e;
+}
+
+.tag.advanced{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+/* Dark mode */
+
+body.dark .tag.beginner{
+  background:#064e3b;
+  color:#6ee7b7;
+}
+
+body.dark .tag.intermediate{
+  background:#713f12;
+  color:#fde68a;
+}
+
+body.dark .tag.advanced{
+  background:#7f1d1d;
+  color:#fecaca;
+}
+
+/* Make certificate rows clickable */
+.cert-row{
+  cursor:pointer;
+}
+
+.cert-row:hover{
+  background:#f8fafc;
+}
+
+body.dark .cert-row:hover{
+  background:#020617;
+}
+.upload-frame-modal{
+  pointer-events:auto !important;
+}
+
+.layout{
+  pointer-events:auto !important;
+}
+
+main{
+  pointer-events:auto !important;
+}
+.cert-row{
+  cursor:pointer;
+}
